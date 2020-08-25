@@ -4,30 +4,32 @@ import Link from "next/link";
 import { FaHome } from "react-icons/fa";
 
 const NavbarCustom = styled(Navbar)`
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-color: transparent;
 `;
 
 const Brand = styled(NavbarBrand)`
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.secondary} !important;
+  color: black;
+  padding: 10px;
+  border-radius: 3px;
   &:hover {
-    filter: brightness(90%);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 `;
 
 const NavButton = styled.button`
   outline: none;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px;
   margin: 0 10px;
   background-color: transparent;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.secondary};
+  color: black;
+  border-radius: 3px;
 
   &:hover {
-    filter: brightness(90%);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 `;
 

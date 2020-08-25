@@ -53,7 +53,7 @@ function ProjectItem({ project, allowEdit }) {
   return (
     <React.Fragment>
       <CardItem>
-        <Image>
+        <Image bg={project.previewImage}>
           {allowEdit && (
             <div style={{ display: "flex", flexDirection: "row" }}>
               <Button
@@ -72,24 +72,30 @@ function ProjectItem({ project, allowEdit }) {
 
           <ButtonContainer>
             {project.liveDemo && (
-              <Button variant="outline-primary">
+              <Button
+                variant="outline-primary"
+                style={{ background: "rgba(0,0,0,.8)" }}
+              >
                 <a
                   href={project.liveDemo}
                   target={project.liveDemo}
                   rel="noopener noreferrer"
-                  style={{ color: "inherit" }}
+                  style={{ color: "inherit", textDecoration: "none" }}
                 >
                   Demo
                 </a>
               </Button>
             )}
             {project.githup && (
-              <Button variant="outline-info">
+              <Button
+                variant="outline-info"
+                style={{ background: "rgba(0,0,0,.8)" }}
+              >
                 <a
                   href={project.githup}
                   target={project.githup}
                   rel="noopener noreferrer"
-                  style={{ color: "inherit" }}
+                  style={{ color: "inherit", textDecoration: "none" }}
                 >
                   GitHup
                 </a>
