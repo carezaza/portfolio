@@ -74,13 +74,16 @@ function ProjectItem({ project, allowEdit }) {
             {project.liveDemo && (
               <Button
                 variant="outline-primary"
-                style={{ background: "rgba(0,0,0,.8)" }}
+                style={{ background: "rgba(0,0,0,.8)", padding: 0 }}
               >
                 <a
                   href={project.liveDemo}
                   target={project.liveDemo}
                   rel="noopener noreferrer"
-                  style={{ color: "inherit", textDecoration: "none" }}
+                  style={{
+                    color: "inherit",
+                    textDecoration: "none",
+                  }}
                 >
                   Demo
                 </a>
@@ -89,13 +92,16 @@ function ProjectItem({ project, allowEdit }) {
             {project.githup && (
               <Button
                 variant="outline-info"
-                style={{ background: "rgba(0,0,0,.8)" }}
+                style={{ background: "rgba(0,0,0,.8)", padding: 0 }}
               >
                 <a
                   href={project.githup}
                   target={project.githup}
                   rel="noopener noreferrer"
-                  style={{ color: "inherit", textDecoration: "none" }}
+                  style={{
+                    color: "inherit",
+                    textDecoration: "none",
+                  }}
                 >
                   GitHup
                 </a>
