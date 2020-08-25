@@ -2,11 +2,13 @@
   "name": "my-port-with-next",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://carezaza.github.io/portsite/",
   "scripts": {
     "dev": "nodemon server/index.js",
     "export": "next export",
     "build": "next build",
-    "start": "next start"
+    "start": "node server/index.js",
+    "deploy": "yarn build && yarn export"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
