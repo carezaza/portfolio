@@ -72,40 +72,38 @@ function ProjectItem({ project, allowEdit }) {
 
           <ButtonContainer>
             {project.liveDemo && (
-              <Button
-                variant="outline-primary"
-                style={{ background: "rgba(0,0,0,.8)", padding: 0 }}
+              <a
+                href={project.liveDemo}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: "none",
+                }}
               >
-                <a
-                  href={project.liveDemo}
-                  target={project.liveDemo}
-                  rel="noopener noreferrer"
-                  style={{
-                    color: "inherit",
-                    textDecoration: "none",
-                  }}
+                <Button
+                  variant="outline-primary"
+                  style={{ background: "rgba(0,0,0,.7)", width: "100%" }}
                 >
                   Demo
-                </a>
-              </Button>
+                </Button>{" "}
+              </a>
             )}
             {project.githup && (
-              <Button
-                variant="outline-info"
-                style={{ background: "rgba(0,0,0,.8)", padding: 0 }}
+              <a
+                href={project.githup}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: "none",
+                }}
               >
-                <a
-                  href={project.githup}
-                  target={project.githup}
-                  rel="noopener noreferrer"
-                  style={{
-                    color: "inherit",
-                    textDecoration: "none",
-                  }}
+                <Button
+                  variant="outline-info"
+                  style={{ background: "rgba(0,0,0,.7)", width: "100%" }}
                 >
                   GitHup
-                </a>
-              </Button>
+                </Button>{" "}
+              </a>
             )}
           </ButtonContainer>
         </Image>
