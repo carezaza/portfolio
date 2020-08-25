@@ -34,7 +34,7 @@ function EditProject({ open, handleClose, project }) {
       name: project && project.name ? project.name : "",
       description: project && project.description ? project.description : "",
       previewImage: project && project.previewImage ? project.previewImage : "",
-      liveDemo: project && project.liveDemo ? project.liveDem : "",
+      liveDemo: project && project.liveDemo ? project.liveDemo : "",
       githup: project && project.githup ? project.githup : "",
     },
   });
