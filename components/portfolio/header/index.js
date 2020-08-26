@@ -5,7 +5,7 @@ import { FaHome } from "react-icons/fa";
 
 const NavbarCustom = styled(Navbar)`
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.4);
 `;
 
 const Brand = styled(NavbarBrand)`

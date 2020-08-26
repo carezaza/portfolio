@@ -11,8 +11,8 @@ const LandingContainer = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 550px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 600px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   display: grid;
   place-items: center;
 `;

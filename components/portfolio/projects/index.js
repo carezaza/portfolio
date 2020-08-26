@@ -5,7 +5,7 @@ import EditProject from "../editProject";
 import React from "react";
 
 const ProjectsContainer = styled.div`
-  margin-top: 550px !important;
+  margin-top: 600px !important;
   border-bottom: 1px solid #ccc;
   padding: 50px 0;
 `;
