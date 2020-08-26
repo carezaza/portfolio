@@ -5,12 +5,17 @@ import { Provider } from "react-redux";
 import axios from "axios";
 
 import store from "../redux/store";
-import { setUser } from "../redux/user/slice";
+import { setUser, setLoading } from "../redux/user/slice";
 
-axios
-  .get("/api/user/currentUser")
-  .then((res) => store.dispatch(setUser(res.data)))
-  .catch((err) => console.error(err.message));
+(async () => {
+  try {
+    const res = await axios.get("/api/user/currentUser");
+    store.dispatch(setUser(res.data));
+  } catch (error) {
+    console.error(error);
+  }
+  store.dispatch(setLoading(false));
+})();
 
 function MyApp({ Component, pageProps }) {
   return (

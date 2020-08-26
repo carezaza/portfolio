@@ -7,7 +7,7 @@ import Resume from "../../../components/portfolio/resume";
 import { useRef, useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { Spinner } from "react-bootstrap";
+import Spinner from "../../../components/Spinner";
 import { useDispatch, useSelector } from "react-redux";
 import { setPort } from "../../../redux/port/slice";
 
@@ -23,19 +23,6 @@ function Port() {
   const ProjectsRef = useRef(null);
   const AboutRef = useRef(null);
   const ResumeRef = useRef(null);
-
-  const Loading = (
-    <div
-      style={{
-        minHeight: "100vh",
-        width: "100%",
-        display: "grid",
-        placeItems: "center",
-      }}
-    >
-      <Spinner animation="border" />
-    </div>
-  );
 
   useEffect(() => {
     if (ProjectsRef && AboutRef && ResumeRef && !loading) {
@@ -71,7 +58,7 @@ function Port() {
     };
   }, [router.query.id, user]);
 
-  if (loading) return Loading;
+  if (loading) return <Spinner />;
   return (
     port && (
       <Layout title={`Portfolio of ...`}>
