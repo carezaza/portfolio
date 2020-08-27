@@ -1,8 +1,26 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Button } from "react-bootstrap";
 import React from "react";
 import EditPersonal from "../editPersonal";
 import { FaGithub, FaFacebook, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+
+const SpinExpandAnimation = css`
+  animation: spin 1s ease-out;
+  @keyframes spin {
+    from {
+      transform: scale(0) rotate(1440deg);
+    }
+  }
+`;
+
+const ExpandAnimation = css`
+  animation: expand 1s ease-out;
+  @keyframes expand {
+    from {
+      transform: scale(0);
+    }
+  }
+`;
 
 const CardContainer = styled.div`
   margin-top: 55px !important;
@@ -17,6 +35,7 @@ const CardContainer = styled.div`
   width: 100%;
   max-width: 700px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  ${ExpandAnimation}
 `;
 
 const Avatar = styled.div`
@@ -38,10 +57,20 @@ const Text = styled.p`
   font-weight: 600;
 `;
 
-const SocialButton = styled.button`
+const LinkA = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  cursor: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+`;
+const SocialButton = styled.button`
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -76,6 +105,8 @@ const SocialButton = styled.button`
   &:hover {
     transform: rotate(720deg);
   }
+
+  ${SpinExpandAnimation}
 `;
 
 const SocialContainer = styled.div`
@@ -109,21 +140,19 @@ function LandingCard({ personal, allowEdit }) {
         </h5>
         <SocialContainer>
           <SocialButton color="secondary" disabled={!personal.social.githup}>
-            <a
+            <LinkA
               href={personal.social.githup || "#"}
               target={personal.social.githup && "_blank"}
               rel="noopener noreferrer"
-              style={{ color: "inherit", cursor: "inherit" }}
             >
               <FaGithub style={{ width: "60%", height: "60%" }} />
-            </a>
+            </LinkA>
           </SocialButton>
           <SocialButton color="primary" disabled={!personal.social.twitter}>
-            <a
+            <LinkA
               href={personal.social.twitter || "#"}
               target={personal.social.twitter && "_blank"}
               rel="noopener noreferrer"
-              style={{ color: "inherit", cursor: "inherit" }}
             >
               <FaTwitter
                 style={{
@@ -131,14 +160,13 @@ function LandingCard({ personal, allowEdit }) {
                   height: "50%",
                 }}
               />
-            </a>
+            </LinkA>
           </SocialButton>
           <SocialButton color="primary" disabled={!personal.social.linkedIn}>
-            <a
+            <LinkA
               href={personal.social.linkedIn || "#"}
               target={personal.social.linkedIn && "_blank"}
               rel="noopener noreferrer"
-              style={{ color: "inherit", cursor: "inherit" }}
             >
               <FaLinkedinIn
                 style={{
@@ -146,14 +174,13 @@ function LandingCard({ personal, allowEdit }) {
                   height: "50%",
                 }}
               />
-            </a>
+            </LinkA>
           </SocialButton>
           <SocialButton color="primary" disabled={!personal.social.facebook}>
-            <a
+            <LinkA
               href={personal.social.facebook || "#"}
               target={personal.social.facebook && "_blank"}
               rel="noopener noreferrer"
-              style={{ color: "inherit", cursor: "inherit" }}
             >
               <FaFacebook
                 style={{
@@ -161,7 +188,7 @@ function LandingCard({ personal, allowEdit }) {
                   height: "60%",
                 }}
               />
-            </a>
+            </LinkA>
           </SocialButton>
         </SocialContainer>
         <Text>Email: {personal.contact.email}</Text>

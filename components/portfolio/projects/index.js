@@ -28,6 +28,7 @@ const ItemContainer = styled.div`
 
 function Projects({ projects, allowEdit }) {
   const [create, setCreate] = React.useState(false);
+
   return (
     <React.Fragment>
       <ProjectsContainer>

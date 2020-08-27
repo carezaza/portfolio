@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import LandingCard from "./landingCard";
+import usePageYOffset from "../../pageYOffset";
 
 const LandingContainer = styled.div`
   position: absolute;
@@ -18,6 +19,8 @@ const LandingContainer = styled.div`
 `;
 
 function Landing({ port, allowEdit }) {
+  const YOffset = usePageYOffset();
+  if (YOffset >= 600) return null;
   return (
     <LandingContainer bg={port.background}>
       <LandingCard personal={port} allowEdit={allowEdit} />
