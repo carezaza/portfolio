@@ -2,6 +2,7 @@ import Layout from "../components/layout";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Link from "next/link";
+import Spinner from "../components/Spinner";
 
 const HomeContainer = styled.div`
   display: grid;
@@ -36,7 +37,7 @@ const ButtonLink = styled.a`
 `;
 
 export default function Home() {
-  const { user } = useSelector((state) => state.userReducer);
+  const { user, loading } = useSelector((state) => state.userReducer);
 
   const Button = !user ? (
     <ButtonLink href="/auth/google" color="#16a17f">
@@ -48,6 +49,7 @@ export default function Home() {
     </Link>
   );
 
+  if (loading) return <Spinner />;
   return (
     <Layout title="Home">
       <HomeContainer>

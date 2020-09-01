@@ -62,7 +62,7 @@ function Port() {
   if (loading) return <Spinner />;
   return (
     port && (
-      <Layout title={`Portfolio of ...`}>
+      <Layout title={`Portfolio of ${router.query.id}`}>
         <Header offset={offset} />
         <Landing port={port} allowEdit={allowEdit} />
         <div ref={ProjectsRef}>
