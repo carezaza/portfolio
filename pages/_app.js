@@ -3,19 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
 import axios from "axios";
-
 import store from "../redux/store";
-import { setUser, setLoading } from "../redux/user/slice";
+import { setUser } from "../redux/user/slice";
 
-(async () => {
-  try {
-    const res = await axios.get("/api/user/currentUser");
-    store.dispatch(setUser(res.data));
-  } catch (error) {
-    console.error(error);
-  }
-  store.dispatch(setLoading(false));
-})();
+axios
+  .get("/api/user/currentUser")
+  .then((res) => store.dispatch(setUser(res.data)))
+  .catch((err) => console.err(err));
 
 function MyApp({ Component, pageProps }) {
   return (

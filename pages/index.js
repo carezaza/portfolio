@@ -36,7 +36,7 @@ const ButtonLink = styled.a`
 `;
 
 export default function Home() {
-  const { user, loading } = useSelector((state) => state.userReducer);
+  const { user } = useSelector((state) => state.userReducer);
 
   const Button = !user ? (
     <ButtonLink href="/auth/google" color="#16a17f">
@@ -51,15 +51,7 @@ export default function Home() {
   return (
     <Layout title="Home">
       <HomeContainer>
-        <Container>
-          {loading ? (
-            <h5 style={{ color: "#fff", padding: "3px 10px 0 10px" }}>
-              Loading...
-            </h5>
-          ) : (
-            Button
-          )}
-        </Container>
+        <Container>{Button}</Container>
       </HomeContainer>
     </Layout>
   );
