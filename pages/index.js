@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <Layout title="Home">
       <HomeContainer>
-        <Container>{loading ? <h2>Loading...</h2> : Button}</Container>
+        <Container>{loading ? <h4>Loading...</h4> : Button}</Container>
       </HomeContainer>
     </Layout>
   );
