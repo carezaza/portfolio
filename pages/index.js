@@ -2,7 +2,6 @@ import Layout from "../components/layout";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Link from "next/link";
-import Spinner from "../components/Spinner";
 
 const HomeContainer = styled.div`
   display: grid;
@@ -49,11 +48,10 @@ export default function Home() {
     </Link>
   );
 
-  if (loading) return <Spinner />;
   return (
     <Layout title="Home">
       <HomeContainer>
-        <Container>{Button}</Container>
+        <Container>{loading ? <h2>Loading...</h2> : Button}</Container>
       </HomeContainer>
     </Layout>
   );
