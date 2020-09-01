@@ -51,7 +51,15 @@ export default function Home() {
   return (
     <Layout title="Home">
       <HomeContainer>
-        <Container>{loading ? <h6>Loading...</h6> : Button}</Container>
+        <Container>
+          {loading ? (
+            <h5 style={{ color: "#fff", padding: "3px 10px 0 10px" }}>
+              Loading...
+            </h5>
+          ) : (
+            Button
+          )}
+        </Container>
       </HomeContainer>
     </Layout>
   );
